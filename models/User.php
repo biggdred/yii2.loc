@@ -29,7 +29,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
 
     /**
-     * @inheritdoc
+     * @inheritdoc .поиск пользователя по id
      */
     public static function findIdentity($id)
     {
@@ -37,7 +37,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     }
 
     /**
-     * @inheritdoc
+     * @inheritdoc .поиск пользователя по AccessToken
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
@@ -52,7 +52,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * Finds user by username
-     *
+     * поиск по логину
      * @param string $username
      * @return static|null
      */
