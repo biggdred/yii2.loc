@@ -56,7 +56,7 @@ class SiteController extends Controller
 
     /**
      * Displays homepage.
-     *
+     * главная страница
      * @return string
      */
     public function actionIndex()
@@ -66,7 +66,7 @@ class SiteController extends Controller
 
     /**
      * Login action.
-     *
+     * страница логина
      * @return Response|string
      */
     public function actionLogin()
@@ -86,7 +86,7 @@ class SiteController extends Controller
 
     /**
      * Logout action.
-     *
+     * страница выхода
      * @return Response
      */
     public function actionLogout()
@@ -98,7 +98,7 @@ class SiteController extends Controller
 
     /**
      * Displays contact page.
-     *
+     * страница контактов
      * @return Response|string
      */
     public function actionContact()
@@ -116,7 +116,7 @@ class SiteController extends Controller
 
     /**
      * Displays about page.
-     *
+     * страница about
      * @return string
      */
     public function actionAbout()
