@@ -130,4 +130,8 @@ class SiteController extends Controller
         ['message' => $message];
 
     }
+
+    public function actionSay($message = 'Привет'){
+        return $this->render('say', ['message' => $message]);
+    }
 }
