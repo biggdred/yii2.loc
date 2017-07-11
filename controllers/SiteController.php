@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\MyForm;
 
 class SiteController extends Controller
 {
@@ -127,11 +128,17 @@ class SiteController extends Controller
     public function actionHello($message = "Hello World"){
         return $this->render('hello');
         //передаем message
-        ['message' => $message];
+        ['message' => $message]
 
     }
 
     public function actionSay($message = 'Привет'){
         return $this->render('say', ['message' => $message]);
+    }
+
+    public function actionForm(){
+        $form = new MyForm();
+        return $this->render('form');
+        ['form' => $form]
     }
 }
