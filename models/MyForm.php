@@ -1,5 +1,7 @@
 <?php
 
+namespace app\models;
+
 class MyForm extends \yii\base\Model {
     public $name;
     public $email;
