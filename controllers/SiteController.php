@@ -141,16 +141,17 @@ class SiteController extends Controller
      */
     public function actionEntry()
     {
-        $model = new EntryForm();
-
+        $model = new EntryForm();//создает объект
+        //Затем оно пытается заполнить мо дель данными из массива $_POST, доступ к которому обеспечивает Yii при помощи yii\web\Request : : post ( ) . Если модель успешно заполнена, тоесть пользователь отправил данные из HTML формы, то для проверки данных будет вызван метод validate ( ) .
         if($model->load(Yii::$app->request->post() && $model->validate()))
         {
             // данные в $model удачно проверены
             // делаем что-то полезное с $model
-            return $this->render('entry-confirm', ['model' => $model]);
+            return $this->render('entry-confirm', ['model' => $model]);//Если всј в порядке, действие отобразит представление entry-confirm,
         }else{
             // либо страница отображается первый раз , либо есть ошибка в данных
             return $this->render('entry', ['model' => $model]);
+            //Информация: Yii : : $app представляет собой глобально доступный экземпляр-одиночку приложения (singleton) . Одновременно это Service Locator,дающий доступ к компонентам вро де request , response, db и так далее. В коде выше для доступа к данным из $_POST был использован компонент request.
         }
     }
 
