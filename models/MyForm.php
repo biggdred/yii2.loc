@@ -2,7 +2,10 @@
 
 namespace app\models;
 
-class MyForm extends \yii\base\Model {
+use Yii;
+use yii\base\Model;
+
+class MyForm extends Model {
     public $name;
     public $email;
 

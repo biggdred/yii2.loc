@@ -128,7 +128,7 @@ class SiteController extends Controller
     public function actionHello($message = "Hello World"){
         return $this->render('hello');
         //передаем message
-        ['message' => $message]
+        ['message' => $message];
 
     }
 
@@ -136,9 +136,5 @@ class SiteController extends Controller
         return $this->render('say', ['message' => $message]);
     }
 
-    public function actionForm(){
-        $form = new MyForm();
-        return $this->render('form');
-        ['form' => $form]
-    }
+
 }
