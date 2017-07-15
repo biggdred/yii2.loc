@@ -18,7 +18,7 @@ class MyForm extends Model {
         return[
             [['name','email'],'required']//name and email -заполнены
             ,// email has to be a valid email address
-            ['email','email']
+            ['email','email' , 'mesage' => 'Некоректный email' ]
             ];
     }
 }
