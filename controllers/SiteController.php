@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\MyForm;
 
 class SiteController extends Controller
 {
@@ -126,12 +127,24 @@ class SiteController extends Controller
     }
 
     public function actionHello($message = "Hello World"){
-        return $this->render('hello');
+        return $this->render('hello',
         //передаем message
-        ['message' => $message];
-
+        ['message' => $message]
+        );
     }
 
+    /**
+     *
+     */
+    public function actionForm(){
+        $form = new MyForm();
+
+        return $this->render('form' , ['form' => $form]);
+    }
+    /**
+     * @param string $message
+     * @return string
+     */
     public function actionSay($message = 'Привет'){
         return $this->render('say', ['message' => $message]);
     }
@@ -147,7 +160,8 @@ class SiteController extends Controller
         {
             // данные в $model удачно проверены
             // делаем что-то полезное с $model
-            return $this->render('entry-confirm', ['model' => $model]);//Если всј в порядке, действие отобразит представление entry-confirm,
+            return $this->render('entry-confirm', ['model' => $model]);
+            //Если все в порядке, действие отобразит представление entry-confirm,
         }else{
             // либо страница отображается первый раз , либо есть ошибка в данных
             return $this->render('entry', ['model' => $model]);
